@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './UserMenu.css'
 
-const UserMenu = ({ userName = 'Admin User', onLogout }) => {
+const UserMenu = ({ userName = 'Admin User', userEmail, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef(null)
 
@@ -62,7 +62,7 @@ const UserMenu = ({ userName = 'Admin User', onLogout }) => {
             </div>
             <div className="user-info">
               <div className="user-name-large">{userName}</div>
-              <div className="user-email">admin@ethiopianairlines.com</div>
+              <div className="user-email">{userEmail || 'No email'}</div>
             </div>
           </div>
           <div className="user-menu-divider"></div>

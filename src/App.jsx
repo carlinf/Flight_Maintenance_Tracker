@@ -95,6 +95,7 @@ function App() {
           <div className="header-right">
             <UserMenu 
               userName={user?.name || 'User'} 
+              userEmail={user?.email}
               onLogout={handleLogout}
             />
           </div>
