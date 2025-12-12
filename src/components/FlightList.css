@@ -1,0 +1,266 @@
+.flight-list {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.flight-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.add-flight-btn {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #C8102E 0%, #078930 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(200, 16, 46, 0.2);
+}
+
+.add-flight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.4);
+}
+
+.flight-list-header h2 {
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  border-color: #C8102E;
+  color: #C8102E;
+}
+
+.filters button.active {
+  background: linear-gradient(135deg, #C8102E 0%, #078930 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.flights-table {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1.5fr 1fr 1fr 1.2fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1.5fr 1fr 1fr 1.2fr;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.table-row:hover {
+  background: #f9fafb;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.col-flight strong {
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.col-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.maintenance-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.col-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn-edit-status {
+  padding: 0.5rem 1rem;
+  background: #FCDD09;
+  color: #1f2937;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-edit-status:hover {
+  background: #e6c708;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(252, 221, 9, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .col-flight,
+  .col-aircraft,
+  .col-route {
+    grid-column: span 1;
+  }
+
+  .col-status,
+  .col-maintenance,
+  .col-hours {
+    grid-column: span 1;
+  }
+
+  .col-next {
+    grid-column: span 2;
+  }
+
+  .col-actions {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .flight-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .table-row {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .col-flight::before {
+    content: 'Flight: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-aircraft::before {
+    content: 'Aircraft: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-route::before {
+    content: 'Route: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-status::before {
+    content: 'Status: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-maintenance::before {
+    content: 'Maintenance: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-hours::before {
+    content: 'Flight Hours: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-next::before {
+    content: 'Next Service: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+
+  .col-actions::before {
+    content: 'Actions: ';
+    font-weight: 600;
+    color: #6b7280;
+  }
+}
+
+

@@ -1,0 +1,46 @@
+.rwandair-logo {
+  display: flex;
+  align-items: center;
+}
+
+.rwandair-logo svg {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.rwandair-logo:hover svg {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .rwandair-logo svg {
+    height: 40px;
+  }
+  
+  .rwandair-logo svg text {
+    font-size: 18px !important;
+  }
+  
+  .rwandair-logo svg text:last-child {
+    font-size: 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .rwandair-logo svg {
+    height: 35px;
+  }
+  
+  .rwandair-logo svg text {
+    font-size: 16px !important;
+  }
+  
+  .rwandair-logo svg text:last-child {
+    display: none;
+  }
+}
+
+
+
